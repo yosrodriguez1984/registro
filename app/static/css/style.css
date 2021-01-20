@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.form-register{
+
+    width: 500px;
+    background: #F0E5AC;
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color:black;
+    align-content: center;
+}
+
+.form-register h3{
+    font-size: 22px;
+    font-weight: bold;
+    
+}
+.form-register h4{
+    font-size: 25px;
+    color: blue;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-register h5{
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.modalidad {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.modalidad button{
+    width: 200px;
+    margin: 10px;
+    padding: 10px;
+    background: linear-gradient(#F0E5AC, white);
+    border: 1px solid black;
+    font-size: 18px;
+    border-radius: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+.controls{
+    width: 100%;
+    background: #F0E5AC;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    font-family: calibri;
+    font-size: 18px;
+    color: black;
+}
+
+.anio_estudio p{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.birthdate{
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    background:  #F0E5AC;
+    color: black;
+    font-weight: bold;
+}
+
+.birthdate label{
+    margin-right: 20px;
+    font-size: 18px;
+    font-family: Calibri;
+    font-weight: bold;
+}
+
+.birthdate input{
+    font-size: 18px;
+    font-family: Calibri;
+    background: #F0E5AC;
+    border-color: black;
+    padding: 10px;
+}
+.form-register p{
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.continuidad {
+    margin-top: 20px;
+}
+.continuidad label{
+    font-size: 17px;
+    font-weight: bold;
+}
+.sede {
+    text-align: auto;
+    padding-top: 20px;
+}
+.sede label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.horarios {
+    padding-top: 20px;
+}
+
+.horarios label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.register{
+    font-size: 18px;
+    border-radius: 2px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: #0088B2;
+    color: #fff;
+    padding: 10px;
+    margin-top: 20px;
+    margin-left: 35%;
+    font-weight: bold;
+    cursor: pointer;
+    }
