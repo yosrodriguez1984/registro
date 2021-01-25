@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from app.models import Modalidad, Sede, Horario
+from app.models import Estudiante, Modalidad, Sede, Horario
 
 
 @admin.register(Sede)
@@ -21,4 +21,17 @@ class HorarioAdmin(admin.ModelAdmin):
         "dias_clase",
         "hora_inicio",
         "hora_fin",
+    )
+
+
+@admin.register(Estudiante)
+class EstudianteAdmin(admin.ModelAdmin):
+    list_display = (
+        "id",
+        "primer_nombre",
+        "segundo_nombre",
+        "primer_apellido",
+        "segundo_apellido",
+        "email",
+        "telefono",
     )

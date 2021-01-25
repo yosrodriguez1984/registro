@@ -2,8 +2,8 @@ from django.db import models
 
 
 class Sede(models.Model):
-    nombre = models.CharField(max_length=15)
-    siglas = models.CharField(max_length=3)
+    nombre = models.CharField(max_length=50)
+    siglas = models.CharField(max_length=8)
 
     class Meta:
         verbose_name = "Sede"
@@ -84,6 +84,7 @@ class Estudiante(models.Model):
 class Matricula(models.Model):
 
     estudiante = models.OneToOneField(to=Estudiante, on_delete=models.CASCADE)
+    modalidad = models.ForeignKey(to=Modalidad, null=True, blank=True, on_delete=models.SET_NULL)
     horario = models.ForeignKey(to=Horario, on_delete=models.CASCADE)
 
     class Meta:

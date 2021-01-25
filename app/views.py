@@ -1,8 +1,9 @@
+from django.core.exceptions import ValidationError
 from django.db import IntegrityError
 from django.shortcuts import render
 from django.views import View
 
-from app.models import Estudiante, Matricula, Horario, Sede
+from app.models import Estudiante, Matricula, Modalidad, Horario, Sede
 
 
 class MatriculaView(View):
@@ -13,6 +14,7 @@ class MatriculaView(View):
         context["sedes"] = Sede.objects.all()
         context["anyos_estudio"] = Estudiante.ANYO_ESTUDIO_CHOICES
         context["horarios"] = Horario.objects.all().order_by("hora_inicio", "hora_fin", "sede_id")
+        context["modalidad"] = Modalidad.objects.all()
 
         return render(request, template_name="index.html", context=context)
 
@@ -37,15 +39,15 @@ class MatriculaView(View):
                 copia_identidad=request.FILES.get("cedula_partida"),
                 certificado=request.FILES.get("certificado"),
             )
-        except (IntegrityError, ValueError) as e:
-            pass
+        except (IntegrityError, ValidationError, ValueError) as e:
+            return render(request, template_name="index.html", context=data)
         else:
             try:
-                Matricula.objects.create(
+                matricula = Matricula.objects.create(
                     estudiante=estudiante,
                     horario_id=int(data.get("p_horarios")),
                 )
             except IntegrityError:
-                pass
+                return render(request, template_name="index.html", context=data)
 
-        return render(request, template_name="sucess.html")
+        return render(request, template_name="success.html")

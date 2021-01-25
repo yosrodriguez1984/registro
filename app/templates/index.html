@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Formulario de Registro</title>
 </head>
@@ -19,8 +21,12 @@
             <h4>2021</h4>
             <p>Debes elegir la modalidad en la que deseas recibir el programa Portal de Matemática</p>
             <div class="modalidad">
-                <button sname="mod_presencial">Modalidad Presencial</button>
-                <button sname="mod_online">Modalidad Online</button>
+                {% for m in modalidad %}
+                <label for="{{ m.id }}">
+                    <input type="radio" name="modalidad" id="{{ m.id }}" value="{{ m.id }}">
+                    {{ m.get_nombre_display }}
+                </label>
+                {% endfor %}
             </div>
             <div class="user_names">
                 <input class="controls" type="Text" style="text-transform:uppercase;" value=""
@@ -128,6 +134,7 @@
 
         </section>
     </form>
+    <script src="{% static 'js/main.js' %}"></script>
 </body>
 
 </html>
